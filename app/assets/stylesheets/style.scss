@@ -1,0 +1,38 @@
+#body {
+  text-align: center;
+  position: relative;
+  z-index: 0;
+  width: 50%;
+  min-width: 320px;
+  margin: auto;
+
+  img {
+    width: 100%;
+  }
+}
+
+.clicked-body-part {
+  background: rgba(255, 0, 0, .7);
+}
+
+#knee {
+  position: absolute;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  top: 67%;
+  left: 60%;
+  cursor: pointer;
+}
+
+#ankle {
+  position: absolute;
+  z-index: 1;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  top: 86%;
+  left: 60%;
+  cursor: pointer;
+}

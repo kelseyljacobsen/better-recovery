@@ -1,0 +1,22 @@
+<div id="body">
+  <%= image_tag('man-front-back.png') %>
+  <div id="knee" class=""></div>
+  <div id="ankle" class=""></div>
+</div>
+
+<script>
+  $('#knee').click(function() {
+    $('#ankle').removeClass('clicked-body-part');
+    $(this).toggleClass('clicked-body-part');
+  });
+  $('#ankle').click(function() {
+    $('#knee').removeClass('clicked-body-part');
+    $(this).toggleClass('clicked-body-part');
+  });
+</script>
+
+
+
+<!--  
+ why is this not working on index.js page?
+-->
