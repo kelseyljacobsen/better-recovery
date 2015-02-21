@@ -1,4 +1,9 @@
+.hidden {
+  visibility: hidden;
+}
+
 #body {
+  @include fill-parent();
   text-align: center;
   position: relative;
   z-index: 0;
@@ -15,24 +20,230 @@
   background: rgba(255, 0, 0, .7);
 }
 
-#knee {
+.body-style {
   position: absolute;
   z-index: 1;
   height: 50px;
   width: 50px;
   border-radius: 50px;
-  top: 67%;
-  left: 60%;
   cursor: pointer;
 }
 
-#ankle {
-  position: absolute;
-  z-index: 1;
-  height: 50px;
-  width: 50px;
-  border-radius: 50px;
-  top: 86%;
-  left: 60%;
-  cursor: pointer;
+#knee {
+  top: 67%;
+  left: 60.7%;
 }
+
+#knee2 {
+  top: 67%;
+  left: 71%;
+}
+
+#knee3 {
+  top: 68%;
+  left: 32%;
+}
+
+#knee4 {
+  top: 68%;
+  left: 22%;
+}
+
+#ankle {
+  top: 86%;
+  left: 60.2%;
+}
+
+#ankle2 {
+  top: 86%;
+  left: 71.5%;
+}
+
+#ankle3 {
+  top: 91%;
+  left: 33.2%;
+}
+
+#ankle4 {
+  top: 91%;
+  left: 20.7%;
+}
+
+#foot {
+  top: 93%;
+  left: 72.5%;
+}
+
+#foot2 {
+  top: 93%;
+  left: 60%;
+}
+
+#hand {
+  top: 51%;
+  left: 77%;
+}
+
+#hand2 {
+  top: 51%;
+  left: 55%;
+}
+
+#hand3 {
+  top: 51%;
+  left: 38%;
+}
+
+#hand4 {
+  top: 51%;
+  left: 16%;
+}
+
+#elbow {
+  top: 34%;
+  left: 77%;
+}
+
+#elbow2 {
+  top: 34%;
+  left: 55%;
+}
+
+#elbow3 {
+  top: 35%;
+  left: 38%;
+}
+
+#elbow4 {
+  top: 35%;
+  left: 16%;
+}
+
+#wrist {
+  top: 45%;
+  left: 77.5%;
+}
+
+#wrist2 {
+  top: 45%;
+  left: 54.5%;
+}
+
+#wrist3 {
+  top: 45%;
+  left: 38.5%;
+}
+
+#wrist4{
+  top: 45%;
+  left: 15.5%; 
+}
+
+#shoulder {
+  top: 19%;
+  left: 74%;
+}
+
+#shoulder2 {
+  top: 19%;
+  left: 58%;
+}
+
+#shoulder3 {
+  top: 19%;
+  left: 35%;
+}
+
+#shoulder4 {
+  top: 19%;
+  left: 19%;
+}
+
+#spine {
+  top: 39%;
+  left: 27%;
+}
+
+#spine2 {
+  top: 32%;
+  left: 27%;
+}
+
+#spine3 {
+  top: 25%;
+  left: 27%;
+}
+
+#spine4 {
+  top: 18%;
+  left: 27%;
+}
+
+#spine5 {
+  top: 12%;
+  left: 27%;
+}
+
+#hip {
+  top: 43%;
+  left: 33%;
+}
+
+#hip2 {
+  top: 43%;
+  left: 21.5%;
+}
+
+#hip3 {
+  top: 43%;
+  left: 61%;
+}
+
+#hip4 {
+  top: 43%;
+  left: 71.5%;
+}
+
+.surgeons {
+  @include span-columns(3);
+  border: 1px solid black;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+// .surgeon-list {
+//   width: 100%;
+//   border: 1px solid black;
+//   height: 100vh;
+//   position: relative;
+//   z-index: 2;
+// }
+
+.body-parts {
+  @include span-columns(6);
+  border: 1px solid black;
+  position: relative;
+  z-index: 2;
+}
+
+.selected-body-part {
+  position: relative;
+  z-index: 2;
+}
+
+.therapists {
+  @include span-columns(3);
+  border: 1px solid black;
+  height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+// .therapist-list {
+//   width: 100%;
+//   border: 1px solid black;
+//   height: 100vh;
+//   position: relative;
+//   z-index: 2;
+// }

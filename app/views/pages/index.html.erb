@@ -1,22 +1,57 @@
-<div id="body">
-  <%= image_tag('man-front-back.png') %>
-  <div id="knee" class=""></div>
-  <div id="ankle" class=""></div>
+  <div id="body">
+      <%= image_tag('man-front-back.png') %>
+      <div id="knee" class="body-style"></div>
+      <div id="knee2" class="body-style"></div>
+      <div id="knee3" class="body-style"></div>
+      <div id="knee4" class="body-style"></div>
+      <div id="ankle" class="body-style"></div>
+      <div id="ankle2" class="body-style"></div>
+      <div id="ankle3" class="body-style"></div>
+      <div id="ankle4" class="body-style"></div>
+      <div id="foot" class="body-style"></div>
+      <div id="foot2" class="body-style"></div>
+      <div id="hand" class="body-style"></div>
+      <div id="hand2" class="body-style"></div>
+      <div id="hand3" class="body-style"></div>
+      <div id="hand4" class="body-style"></div>
+      <div id="elbow" class="body-style"></div>
+      <div id="elbow2" class="body-style"></div>
+      <div id="elbow3" class="body-style"></div>
+      <div id="elbow4" class="body-style"></div>
+      <div id="wrist" class="body-style"></div>
+      <div id="wrist2" class="body-style"></div>
+      <div id="wrist3" class="body-style"></div>
+      <div id="wrist4" class="body-style"></div>
+      <div id="shoulder" class="body-style"></div>
+      <div id="shoulder2" class="body-style"></div>
+      <div id="shoulder3" class="body-style"></div>
+      <div id="shoulder4" class="body-style"></div>
+      <div id="spine" class="body-style"></div>
+      <div id="spine2" class="body-style"></div>
+      <div id="spine3" class="body-style"></div>
+      <div id="spine4" class="body-style"></div>
+      <div id="spine5" class="body-style"></div>
+      <div id="hip" class="body-style"></div>
+      <div id="hip2" class="body-style"></div>
+      <div id="hip3" class="body-style"></div>
+      <div id="hip4" class="body-style"></div>
+    </div>
+
+
+
+<div class="outer-container">
+  <div class="surgeons">
+    <div class="surgeon-list">
+    </div>
+  </div>
+
+  <div class="body-parts">
+    <div class="selected-body-part">
+      <h2 id="body-part"></h2>
+    </div>
+  </div>
+
+  <div class="therapists">
+    <div class="therapist-list">
+    </div>
 </div>
-
-<script>
-  $('#knee').click(function() {
-    $('#ankle').removeClass('clicked-body-part');
-    $(this).toggleClass('clicked-body-part');
-  });
-  $('#ankle').click(function() {
-    $('#knee').removeClass('clicked-body-part');
-    $(this).toggleClass('clicked-body-part');
-  });
-</script>
-
-
-
-<!--  
- why is this not working on index.js page?
--->
