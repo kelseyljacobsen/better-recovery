@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+ $('#body-part').html('&nbsp;');
+
   $('#knee, #knee2, #knee3, #knee4').click(function() {
     $('*').removeClass('clicked-body-part');
     $(this).addClass('clicked-body-part');

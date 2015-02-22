@@ -1,3 +1,7 @@
+header {
+  text-align: center;
+}
+
 .hidden {
   visibility: hidden;
 }
@@ -6,10 +10,11 @@
   @include fill-parent();
   text-align: center;
   position: relative;
-  z-index: 0;
-  width: 50%;
+  z-index: 2;
+  width: auto;
   min-width: 320px;
   margin: auto;
+  margin-left: -6%;
 
   img {
     width: 100%;
@@ -22,7 +27,7 @@
 
 .body-style {
   position: absolute;
-  z-index: 1;
+  z-index: 3;
   height: 50px;
   width: 50px;
   border-radius: 50px;
@@ -31,200 +36,195 @@
 
 #knee {
   top: 67%;
-  left: 60.7%;
+  left: 59.8%;
 }
 
 #knee2 {
   top: 67%;
-  left: 71%;
+  left: 70.2%;
 }
 
 #knee3 {
   top: 68%;
-  left: 32%;
+  left: 31%;
 }
 
 #knee4 {
   top: 68%;
-  left: 22%;
+  left: 21%;
 }
 
 #ankle {
   top: 86%;
-  left: 60.2%;
+  left: 59.2%;
 }
 
 #ankle2 {
   top: 86%;
-  left: 71.5%;
+  left: 70.5%;
 }
 
 #ankle3 {
   top: 91%;
-  left: 33.2%;
+  left: 32.2%;
 }
 
 #ankle4 {
   top: 91%;
-  left: 20.7%;
+  left: 19.7%;
 }
 
 #foot {
   top: 93%;
-  left: 72.5%;
+  left: 71.5%;
 }
 
 #foot2 {
   top: 93%;
-  left: 60%;
+  left: 58.6%;
 }
 
 #hand {
   top: 51%;
-  left: 77%;
+  left: 76%;
 }
 
 #hand2 {
   top: 51%;
-  left: 55%;
+  left: 54.2%;
 }
 
 #hand3 {
   top: 51%;
-  left: 38%;
+  left: 37%;
 }
 
 #hand4 {
   top: 51%;
-  left: 16%;
+  left: 15%;
 }
 
 #elbow {
   top: 34%;
-  left: 77%;
+  left: 76.2%;
 }
 
 #elbow2 {
   top: 34%;
-  left: 55%;
+  left: 54%;
 }
 
 #elbow3 {
   top: 35%;
-  left: 38%;
+  left: 37%;
 }
 
 #elbow4 {
   top: 35%;
-  left: 16%;
+  left: 15%;
 }
 
 #wrist {
   top: 45%;
-  left: 77.5%;
+  left: 76.5%;
 }
 
 #wrist2 {
   top: 45%;
-  left: 54.5%;
+  left: 53.5%;
 }
 
 #wrist3 {
   top: 45%;
-  left: 38.5%;
+  left: 37.5%;
 }
 
 #wrist4{
   top: 45%;
-  left: 15.5%; 
+  left: 14.5%; 
 }
 
 #shoulder {
   top: 19%;
-  left: 74%;
+  left: 73%;
 }
 
 #shoulder2 {
   top: 19%;
-  left: 58%;
+  left: 57%;
 }
 
 #shoulder3 {
   top: 19%;
-  left: 35%;
+  left: 34%;
 }
 
 #shoulder4 {
   top: 19%;
-  left: 19%;
+  left: 18%;
 }
 
 #spine {
   top: 39%;
-  left: 27%;
+  left: 26%;
 }
 
 #spine2 {
   top: 32%;
-  left: 27%;
+  left: 26%;
 }
 
 #spine3 {
   top: 25%;
-  left: 27%;
+  left: 26%;
 }
 
 #spine4 {
   top: 18%;
-  left: 27%;
+  left: 26%;
 }
 
 #spine5 {
   top: 12%;
-  left: 27%;
+  left: 26%;
 }
 
 #hip {
   top: 43%;
-  left: 33%;
+  left: 31%;
 }
 
 #hip2 {
   top: 43%;
-  left: 21.5%;
+  left: 20.8%;
 }
 
 #hip3 {
   top: 43%;
-  left: 61%;
+  left: 60%;
 }
 
 #hip4 {
   top: 43%;
-  left: 71.5%;
+  left: 70.3%;
 }
 
 .surgeons {
-  @include span-columns(3);
+  @include span-columns(3.5);
   border: 1px solid black;
   height: 100vh;
   position: relative;
   z-index: 2;
+  margin-left: 2%;
+  margin-bottom: 2%;
 }
 
-// .surgeon-list {
-//   width: 100%;
-//   border: 1px solid black;
-//   height: 100vh;
-//   position: relative;
-//   z-index: 2;
-// }
-
 .body-parts {
-  @include span-columns(6);
-  border: 1px solid black;
+  @include span-columns(5);
+  border: none;
   position: relative;
-  z-index: 2;
+  z-index: 1;
+  margin-left: -1%;
 }
 
 .selected-body-part {
@@ -233,17 +233,12 @@
 }
 
 .therapists {
-  @include span-columns(3);
+  @include span-columns(3.5);
   border: 1px solid black;
   height: 100vh;
   position: relative;
   z-index: 2;
+  margin-right: 3%;
+  margin-left: -3%;
+  margin-bottom: 2%;
 }
-
-// .therapist-list {
-//   width: 100%;
-//   border: 1px solid black;
-//   height: 100vh;
-//   position: relative;
-//   z-index: 2;
-// }
