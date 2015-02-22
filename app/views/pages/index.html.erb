@@ -4,9 +4,9 @@
 </header>
 
 
-<div class="outer-container">
+<div class="outer-container" ng-controller="indexController">
   <div class="surgeons">
-    <div class="surgeon-list">
+    <div class="surgeon-list" ng-show="showDoctors">
     </div>
   </div>
 
@@ -17,47 +17,47 @@
 
     <div id="body">
       <%= image_tag('man-front-back.png') %>
-      <div id="knee" class="body-style"></div>
-      <div id="knee2" class="body-style"></div>
-      <div id="knee3" class="body-style"></div>
-      <div id="knee4" class="body-style"></div>
-      <div id="ankle" class="body-style"></div>
-      <div id="ankle2" class="body-style"></div>
-      <div id="ankle3" class="body-style"></div>
-      <div id="ankle4" class="body-style"></div>
-      <div id="foot" class="body-style"></div>
-      <div id="foot2" class="body-style"></div>
-      <div id="hand" class="body-style"></div>
-      <div id="hand2" class="body-style"></div>
-      <div id="hand3" class="body-style"></div>
-      <div id="hand4" class="body-style"></div>
-      <div id="elbow" class="body-style"></div>
-      <div id="elbow2" class="body-style"></div>
-      <div id="elbow3" class="body-style"></div>
-      <div id="elbow4" class="body-style"></div>
-      <div id="wrist" class="body-style"></div>
-      <div id="wrist2" class="body-style"></div>
-      <div id="wrist3" class="body-style"></div>
-      <div id="wrist4" class="body-style"></div>
-      <div id="shoulder" class="body-style"></div>
-      <div id="shoulder2" class="body-style"></div>
-      <div id="shoulder3" class="body-style"></div>
-      <div id="shoulder4" class="body-style"></div>
-      <div id="spine" class="body-style"></div>
-      <div id="spine2" class="body-style"></div>
-      <div id="spine3" class="body-style"></div>
-      <div id="spine4" class="body-style"></div>
-      <div id="spine5" class="body-style"></div>
-      <div id="hip" class="body-style"></div>
-      <div id="hip2" class="body-style"></div>
-      <div id="hip3" class="body-style"></div>
-      <div id="hip4" class="body-style"></div>
+      <div id="knee" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="knee2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="knee3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="knee4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="ankle" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="ankle2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="ankle3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="ankle4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="foot" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="foot2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hand" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hand2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hand3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hand4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="elbow" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="elbow2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="elbow3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="elbow4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="wrist" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="wrist2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="wrist3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="wrist4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="shoulder" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="shoulder2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="shoulder3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="shoulder4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="spine" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="spine2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="spine3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="spine4" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="spine5" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hip" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hip2" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hip3" class="body-style" ng-click="showDoctors=true"></div>
+      <div id="hip4" class="body-style" ng-click="showDoctors=true"></div>
     </div>
 
   </div>
 
   <div class="therapists">
-    <div class="therapist-list">
+    <div class="therapist-list" ng-show="showDoctors">
     </div>
 </div>
 
