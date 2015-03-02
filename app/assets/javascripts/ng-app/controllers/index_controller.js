@@ -4,4 +4,7 @@ angular
 
   function indexController($scope) {
     $scope.showDoctors = false;
+    // $scope.signupFlash = signupFlash;
   }
+
+
