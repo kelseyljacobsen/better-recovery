@@ -56,4 +56,41 @@ $(document).ready(function() {
     $('#body-part').html('Hip');
   });
 
+  $('div.fade-flash-messages').fadeOut(5000).removeClass('fade-flash-messages');
+
 });
+
+
+// $(document).ready(function() {
+//   $("your form selector here").submit(function() {
+
+
+//     // do the extra stuff here
+//     $.ajax({
+//      type: "POST",
+//       url: "mail.php",
+//       data: $(this).serialize(),
+//       success: function() {
+//         $('.simple-sucess').fadeIn(100).show();
+//         $('.contact_form').fadeOut(100).hide();
+//         $('.simple_error').fadeOut(100).hide();
+
+//        }
+//     })
+
+//   })
+// })
+
+ // $('#review-form').submit(function() {
+ //    $.ajax({
+ //      type: 'POST',
+ //      url: '/reviews/create',
+ //      datatype: 'json',
+ //      data: $(this).serialize(),
+ //      success: function() {
+
+ //      }
+ //    });
+
+ //  });
+

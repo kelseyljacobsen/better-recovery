@@ -18,3 +18,4 @@
 //= require angular-resource
 //= require ./ng-app/main
 //= require ./ng-app/controllers/index_controller
+//= require_tree .

@@ -1,0 +1,13 @@
+
+<%= form_for review, remote: true, id: "review-form" do |f| %>
+  <div class="form-group">
+    <label for="rating">Rating</label>
+    <%= f.select :rating, (1..5) %><br>
+    <label for="body">Comment</label>
+    <%= f.text_area :body, id: "review-body", required: true %>
+  </div>
+
+  <%= f.hidden_field :doctor_id, hidden: true %>
+  <%= f.hidden_field :user_id, hidden: true %>
+  <%= f.submit "Submit", class: "btn btn-primary", id: 'submit-review-button' %>
+<% end %>

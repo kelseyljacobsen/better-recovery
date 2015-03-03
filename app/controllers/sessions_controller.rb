@@ -15,11 +15,10 @@ class SessionsController < ApplicationController
       flash[:success] = "Welcome back, #{user.first_name}!"
       # guarantees that the session[:user_id] will always be a string of the user's id
       session[:user_id] = user.id.to_s 
-      # sends user to their profile
       redirect_to root_path
     else
       # alerts that the user has entered an incorrect password and/or username
-      flash[:danger] = "Uh oh, incorrect password or username. Try again."
+      flash[:danger] = "Incorrect password and/or username."
       # redirects user to homepage to sign in again
       redirect_to root_path
     end 

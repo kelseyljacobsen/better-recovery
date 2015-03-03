@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  resources :users
-
   root 'pages#index'
 
   get '/signup'    => 'users#new', as: :signup
@@ -10,6 +8,17 @@ Rails.application.routes.draw do
   post '/login' => 'sessions#create'
   get '/logout' => 'sessions#destroy', as: :logout
  
-  resources :users
+  resources :users do
+    resources :doctors do
+      resources :reviews 
+    end 
+  end 
+
+
+  resources :doctors do
+    resources :reviews
+  end
+
+  resources :reviews
 
 end

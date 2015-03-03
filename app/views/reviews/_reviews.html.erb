@@ -1,0 +1,19 @@
+<div id="review-title">
+  <p>Reviews of <%= @name %></p>
+</div>
+
+<% @reviews.each do |r| %>
+  <div class="review">
+    <p><%#= @user.first_name %> says: <%= r.body %></p>
+    <p>Rating: <%= r.rating %></p>
+  </div>
+<% end %>
+
+<div id="add-review">
+  <% if current_user %>
+    <%= link_to "Add Review", new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true %>
+        <div id="review-<%= @id %>"></div> 
+  <% else %>
+    <p>Signup to create an account and review a doctor.</p>
+  <% end %>
+</div>

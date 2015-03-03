@@ -5,7 +5,7 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.new(params.require(:user).permit!)
+    @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id.to_s
       flash[:info] = "Welcome! You can now write reviews for doctors."
@@ -16,9 +16,8 @@ class UsersController < ApplicationController
     end
   end
 
-  # private
-  #   # Never trust parameters from the scary internet, only allow the white list through.
-  #   def user_params
-  #     params.require(:user).permit(:first_name, :last_name, :username, :city, :state, :email, :password, :password_confirmation)
-  #   end
+  private
+    def user_params
+      params.require(:user).permit(:first_name, :last_name, :username, :city, :state, :email, :password, :password_confirmation)
+    end
 end

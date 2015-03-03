@@ -8,7 +8,7 @@ namespace :import do
 
       # SPINE DOCTORS
 
-      { name: 'William M Costigan, M.D.',
+      { name: 'William M. Costigan, M.D.',
         group: 'Congress Medical Associates',
         specialty: 'spine/back',
         address: '800 S. Raymond Ave.',

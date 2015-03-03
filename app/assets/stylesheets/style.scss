@@ -12,6 +12,45 @@
   padding-top: 10px;
   top: 2%;
   right: 2%;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 14px;
+}
+
+.flash-messages {
+  position: absolute;
+  right: 2%;
+  top: 8%;
+  width: 25%;
+  z-index: 3;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+  font-size: 16px;
+}
+
+label {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.form-control {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300px;
+}
+
+.modal-header {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.modal-footer {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.modal-content {
+  border-radius: 0px;
 }
 
 hr { 
@@ -33,6 +72,10 @@ h1 {
 
 .right-input {
   width: 49.5% !important;
+}
+
+.form-control {
+  border-radius: 0px !important;
 }
 
 .subtitle {
@@ -277,16 +320,25 @@ h1 {
   margin: 15px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
+  display: block;
+  background-color: white;
+  width: 90%;
+}
+
+.surgeon:focus {
+  outline: none;
 }
 
 .surgeon-name {
-  font-size: 20px;
-  font-weight: 500px;
+  font-size: 18px;
+  font-weight: 400;
+  text-align: left;
 }
 
 .surgeon-group {
   text-transform: uppercase;
   font-size: 15px;
+  text-align: left;
 }
 
 .surgeon-info {
@@ -309,18 +361,68 @@ h1 {
   z-index: 2;
 }
 
-.therapists {
+.reviews {
   @include span-columns(3.5);
   border: none;
   height: 100vh;
   position: relative;
-  z-index: 2;
+  z-index: 3;
   margin-right: 3%;
-  margin-left: -3%;
+  margin-left: -4%;
   margin-bottom: 2%;
 }
 
-.therapist-list {
-  border: 1px solid black;
-  height: 100vh;
+.review-list {
+  max-height: 100vh;
+  overflow-y: scroll;
+}
+
+.review {
+  padding: 10px 10px 0px 10px;
+  border: 1px solid rgba(50, 49, 47, 0.3);
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+#review-title {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+}
+
+#add-review {
+  margin-left: 15px;
+  margin-bottom: 15px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+#review-body {
+  width: 100%;
+  height: 100px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  padding: 5px 8px;
+  border: 1px solid rgba(50, 49, 47, 0.3);
+}
+
+#review-body:focus {
+  outline: none;
+}
+
+#submit-review-button {
+  float: right;
+  margin-top: -10px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 300;
+}
+
+.btn-primary {
+  border-radius: 0px !important;
 }

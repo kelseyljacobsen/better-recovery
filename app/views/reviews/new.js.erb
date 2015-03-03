@@ -1,0 +1,3 @@
+var review_form = '<%=j render partial: "review_form", locals: { review: @review } %>';
+
+$('#review-<%= @doctor.id %>').html( review_form );

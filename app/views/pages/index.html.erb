@@ -5,118 +5,55 @@
     <hr>
   </div>
 
-  <div class="links">
-    <% if current_user %>
-      <p>Logged in as: <%= current_user.first_name + ' ' + current_user.last_name %> &nbsp;| &nbsp;<a href="/logout">Logout</a></p>
-      <% else %>
-      <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal">Signup</a></p>
-    <% end %>
+  <div class="links-and-flash">
+    <div class="links">
+      <% if current_user %>
+        <p>Logged in as: <%= current_user.first_name + ' ' + current_user.last_name %> &nbsp;| &nbsp;<a href="/logout">Logout</a></p>
+        <% else %>
+        <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal">Signup</a></p>
+      <% end %>
+    </div>
+    <div class="flash-messages">
+      <div class="fade-flash-messages">
+        <% flash.each do |key, value| %>
+        
+            <div class="alert alert-<%= key %>" role="alert">
+            <%# value.each do |v| %>
+              <%= value %><br>
+               <%# end %>
+            </div>
+        
+        <% end %>
+      </div>
+    </div>
   </div>
-
-    <!-- VALIDATION FLASH MESSAGES -->
 
 
 <div class="outer-container">
   <div class="surgeons">
     <div class="surgeon-list" ng-show="showKneeDoctors">
-      <% @doctors.where(specialty: 'knee').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'knee') %>  
     </div>
     <div class="surgeon-list" ng-show="showFootDoctors">
-      <% @doctors.where(specialty: 'foot/ankle').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'foot/ankle') %>
     </div>
     <div class="surgeon-list" ng-show="showHipDoctors">
-      <% @doctors.where(specialty: 'hip').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'hip') %>
     </div>
     <div class="surgeon-list" ng-show="showHandDoctors">
-      <% @doctors.where(specialty: 'hand/wrist').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'hand/wrist') %>
     </div>
-      <div class="surgeon-list" ng-show="showShoulderDoctors">
-      <% @doctors.where(specialty: 'shoulder').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+    <div class="surgeon-list" ng-show="showShoulderDoctors">
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'shoulder') %>
     </div>
     <div class="surgeon-list" ng-show="showSpineDoctors">
-      <% @doctors.where(specialty: 'spine/back').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'spine/back') %>
     </div>
     <div class="surgeon-list" ng-show="showElbowDoctors">
-      <% @doctors.where(specialty: 'elbow').find_each do |d| %>
-        <div class="surgeon">
-          <p class="surgeon-name"><%= d.name %></p>
-          <% if d.group %>
-            <p class="surgeon-group"><%= d.group %></p>
-          <% end %>
-          <p class="surgeon-info"><%= d.address %><br>
-            <%= d.city %> <%= d.zip %><br>
-            <%= d.phone %><br>
-            <%= link_to d.web, "http://#{d.web}", target: "_blank" %></p>
-        </div>
-      <% end %>
+      <%= render partial: "doctor", collection: @doctors.where(specialty: 'elbow') %>
     </div>
   </div>
+
 
   <div class="body-parts">
     <div class="selected-body-part">
@@ -164,8 +101,10 @@
 
   </div>
 
-  <div class="therapists">
-    <div class="therapist-list" ng-show="showDoctors">
+  <div class="reviews" ng-show="showReviews">
+    <div class="review-list">
+      <div id="reviews">
+      </div>
     </div>
 </div>
 
@@ -183,11 +122,11 @@
         <%= form_for :user, url: '/login' do |f| %> 
           <div class="form-group">
             <label for="email">Email Address</label>
-            <%= f.email_field :email, placeholder: 'Enter your email', class: "form-control" %>
+            <%= f.email_field :email, placeholder: 'Enter your email', class: "form-control", required: true %>
           </div>
           <div class="form-group">
             <label for="password">Password</label>
-            <%= f.password_field :password, placeholder: 'Enter your password', class: "form-control" %>
+            <%= f.password_field :password, placeholder: 'Enter your password', class: "form-control", required: true %>
           </div>
         </div>
         <div class="modal-footer">
@@ -213,48 +152,37 @@
         <%= form_for :user, url: '/signup' do |f| %> 
           <div class="form-group">
             <label for="first_name">First Name</label>
-            <%= f.text_field :first_name, placeholder: 'Enter your first name', class: "form-control" %>
+            <%= f.text_field :first_name, placeholder: 'Enter your first name', class: "form-control", required: true %>
           </div>
           <div class="form-group">
             <label for="last_name">Last Name</label>
-            <%= f.text_field :last_name, placeholder: 'Enter your last name', class: "form-control" %>
+            <%= f.text_field :last_name, placeholder: 'Enter your last name', class: "form-control", required: true %>
           </div>    
           <div class="form-group">
             <label for="username">Username</label>
-            <%= f.text_field :username, placeholder: 'Choose a username', class: "form-control" %>
+            <%= f.text_field :username, placeholder: 'Choose a username', class: "form-control", required: true %>
           </div>  
           <div class="form-group">
             <label for="email">Email Address</label>
-            <%= f.text_field :email, placeholder: 'Enter your email address', class: "form-control" %>
+            <%= f.text_field :email, placeholder: 'Enter your email address', class: "form-control", required: true %>
           </div>  
           <div class="form-group">
             <label for="city">Location</label>
               <div class="form-inline">
-                  <%= f.text_field :city, placeholder: 'Enter your city', class: "form-control left-input" %>
-                  <%= f.text_field :state, placeholder: 'Enter your state', class: "form-control right-input" %>
+                  <%= f.text_field :city, placeholder: 'Enter your city', class: "form-control left-input", required: true %>
+                  <%= f.text_field :state, placeholder: 'Enter your state', class: "form-control right-input", required: true %>
               </div>
           </div> 
           <div class="form-group">
             <label for="password">Password</label>
-            <%= f.password_field :password, placeholder: 'Choose a password (at least 6 characters)', class: "form-control" %>
+            <%= f.password_field :password, placeholder: 'Choose a password (at least 6 characters)', class: "form-control", required: true %>
           </div>  
           <div class="form-group">
             <label for="password_confirmation">Password Confirmation</label>
-            <%= f.password_field :password_confirmation, placeholder: 'Enter your password once more', class: "form-control" %>
+            <%= f.password_field :password_confirmation, placeholder: 'Enter your password once more', class: "form-control", required: true %>
           </div>  
         </div>
         <div class="modal-footer">
-            <div class="flash-messages">
-      <div class="fade-flash-messages">
-        <% flash.each do |key, value| %>
-
-        <div class="alert alert-<%= key %>" role="alert">
-          <%= value %><br>
-        </div>
-
-        <% end %>
-      </div>
-    </div>
           <a href="#" data-dismiss="modal" class="btn">Close</a>
           <%= f.submit "Signup!", class: "btn btn-primary", id: 'signup-button' %>
         </div>
@@ -263,3 +191,5 @@
      </div>
   </div>
 </div>
+</div>
+

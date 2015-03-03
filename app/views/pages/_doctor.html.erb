@@ -1,0 +1,10 @@
+<%= button_to doctor_reviews_path(doctor_id: doctor.id), class: "surgeon", method: :get, 'ng-click': 'showReviews=true', remote: true do %>
+  <p class="surgeon-name"><%= doctor.name %></p>
+  <% if doctor.group %>
+    <p class="surgeon-group"><%= doctor.group %></p>
+  <% end %>
+  <p class="surgeon-info"><%= doctor.address %><br>
+    <%= doctor.city %> <%= doctor.zip %><br>
+    <%= doctor.phone %><br>
+    <%= link_to doctor.web, "http://#{doctor.web}", target: "_blank" %></p>
+<% end %>
