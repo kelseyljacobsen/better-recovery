@@ -5,10 +5,10 @@
 <div class="all-reviews">
 <% @reviews.each do |r| %>
   <div class="review">
+    <p class="rating-number"><%= r.rating %></p>
+    <p class="rating-title">Rating:</p>
     <p class="review-info"><%= r.user.username %> from <%= r.user.city %>, <%= r.user.state %>, says:</p>
     <p class="review-text"><%= r.body %></p>
-    <p class="rating-title">Rating:</p>
-    <p class="rating-number"><%= r.rating %></p>
   </div>
 <% end %>
 </div>
@@ -21,3 +21,4 @@
     <p>Signup to create an account and review a doctor.</p>
   <% end %>
 </div>
+

@@ -1,9 +1,7 @@
+
 $('#doctor-<%= @review.doctor.id %>-review-count').html('<%= @review.doctor.reviews.count %> reviews');
 
-$('.all-reviews').append('<div class="review"><p><%= @review.user.username %> from <%= @review.user.city %>, <%= @review.user.state %>, says: <br> <%= @review.body %></p><p>Rating: <%= @review.rating %></p></div>');
+$('.all-reviews').append('<div class="review"><p class="rating-number"><%= @review.rating %></p><p class="rating-title">Rating:</p><p class="review-info"><%= @review.user.username %> from <%= @review.user.city %>, <%= @review.user.state %>, says:</p><p class="review-text"><%= @review.body %></p></div>');
 
 
 $('#review-<%= @review.doctor_id %>').empty();
-
-
-
