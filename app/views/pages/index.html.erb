@@ -31,25 +31,25 @@
 
 <div class="outer-container">
   <div class="surgeons">
-    <div class="surgeon-list" ng-show="showKneeDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showKneeDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'knee') %>  
     </div>
-    <div class="surgeon-list" ng-show="showFootDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showFootDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'foot/ankle') %>
     </div>
-    <div class="surgeon-list" ng-show="showHipDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showHipDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'hip') %>
     </div>
-    <div class="surgeon-list" ng-show="showHandDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showHandDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'hand/wrist') %>
     </div>
-    <div class="surgeon-list" ng-show="showShoulderDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showShoulderDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'shoulder') %>
     </div>
-    <div class="surgeon-list" ng-show="showSpineDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showSpineDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'spine/back') %>
     </div>
-    <div class="surgeon-list" ng-show="showElbowDoctors">
+    <div class="surgeon-list animate-hide" ng-show="showElbowDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'elbow') %>
     </div>
   </div>
