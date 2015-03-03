@@ -1,11 +1,9 @@
 class ReviewsController < ApplicationController
 
   def index
-    @reviews = Review.where(doctor_id: params[:doctor_id])
+    @reviews = Review.includes(:user).where(doctor_id: params[:doctor_id])
     @id = params[:doctor_id]
     @name = Doctor.find(params[:doctor_id]).name
-    # how can i define the user who wrote the review?
-    # @user = Review.find(params[:review_id]).user_id
   end 
 
   def new

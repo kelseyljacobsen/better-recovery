@@ -90,6 +90,7 @@ h1 {
   font-weight: 300;
   text-transform: lowercase;
   padding-bottom: 20px;
+  font-size: 18px;
 }
 
 .hidden {
@@ -124,10 +125,15 @@ h1 {
   cursor: pointer;
 }
 
+.body-style:hover {
+  background: rgba(255, 0, 0, .3);
+}
+
 #knee {
   top: 67%;
   left: 60.2%;
 }
+
 
 #knee2 {
   top: 67%;
@@ -322,11 +328,16 @@ h1 {
   font-weight: 300;
   display: block;
   background-color: white;
-  width: 90%;
+  width: 94%;
+}
+
+.surgeon:hover {
+  background-color: rgba(50, 49, 47, 0.2);
 }
 
 .surgeon:focus {
   outline: none;
+  background-color: rgba(50, 49, 47, 0.2);
 }
 
 .surgeon-name {
@@ -367,7 +378,7 @@ h1 {
   height: 100vh;
   position: relative;
   z-index: 3;
-  margin-right: 3%;
+  margin-right: 2%;
   margin-left: -4%;
   margin-bottom: 2%;
 }
@@ -385,6 +396,7 @@ h1 {
   margin-top: 15px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
+  width: 94%;
 }
 
 #review-title {
@@ -394,6 +406,8 @@ h1 {
   font-family: 'Raleway', sans-serif;
   font-weight: 400;
   font-size: 18px;
+  text-align: center;
+  margin-right: 2%;
 }
 
 #add-review {
@@ -415,6 +429,27 @@ h1 {
 #review-body:focus {
   outline: none;
 }
+
+.rating-number {
+  float: right;
+  font-size: 34px;
+  font-family: 'Syncopate', sans-serif;
+  font-weight: 400;
+  margin-top: -15%;
+  padding-bottom: 10px;
+}
+
+.rating-title {
+  float: right;
+  margin-top: -19%;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.review-info {
+  font-weight: 400;
+}
+
 
 #submit-review-button {
   float: right;

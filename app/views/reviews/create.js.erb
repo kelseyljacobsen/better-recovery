@@ -1,12 +1,9 @@
 $('#doctor-<%= @review.doctor.id %>-review-count').html('<%= @review.doctor.reviews.count %> reviews');
 
-// $('#reviews').append('is this working?');
+$('.all-reviews').append('<div class="review"><p><%= @review.user.username %> from <%= @review.user.city %>, <%= @review.user.state %>, says: <br> <%= @review.body %></p><p>Rating: <%= @review.rating %></p></div>');
+
 
 $('#review-<%= @review.doctor_id %>').empty();
 
-
-// $('#submit-review-button').submit(function() {
-//     alert('You submitted the form!');
-//   });
 
 
