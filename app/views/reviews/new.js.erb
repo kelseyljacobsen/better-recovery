@@ -1,3 +1,12 @@
 var review_form = '<%=j render partial: "review_form", locals: { review: @review } %>';
 
 $('#review-<%= @doctor.id %>').html( review_form );
+
+var saveReviewDiv = $('#add-review-link').html();
+
+$('#add-review-link').empty().html('Complete your review below:');
+
+function cancelForm() {
+  $('#add-review-link').empty().html( saveReviewDiv );
+  $('#review-<%= @review.doctor_id %>').empty();
+}

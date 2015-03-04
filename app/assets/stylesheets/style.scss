@@ -485,8 +485,20 @@ h1 {
   border: 1px solid rgba(50, 49, 47, 0.3);
 }
 
-#review-body:focus {
-  outline: none;
+#rating-dropdown {
+  width: 25%;
+  cursor: pointer;
+  border: 0;
+  outline: 1px inset rgba(50, 49, 47, 0.3);
+  outline-offset:-1px;
+  margin-bottom: 10px;
+}
+
+#add-review-link {
+  text-align: center;
+  width: 95%;
+  margin-bottom: 5px;
+  margin-top: 5px;
 }
 
 .rating-number {
@@ -515,15 +527,20 @@ h1 {
   width: 80%;
 }
 
-
 #submit-review-button {
   float: right;
-  margin-top: -10px;
   margin-right: 5%;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
 }
 
+#cancel-tag {
+  cursor: pointer;
+  margin-left: 55%;
+  font-size: 15px;
+  line-height: 37px;
+}
 .btn-primary {
   border-radius: 0px !important;
+  font-size: 15px;
 }

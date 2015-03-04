@@ -15,10 +15,12 @@
 
 <div id="add-review">
   <% if current_user %>
-    <%= link_to "Add Review", new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true %>
-        <div id="review-<%= @id %>"></div> 
+    <div id="add-review-link">
+      <%= link_to "Add Review", new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true %>
+    </div>
+      <div id="review-<%= @id %>"></div> 
   <% else %>
-    <p>Signup to create an account and review a doctor.</p>
+    <p>Signup to create an account and review this doctor.</p>
   <% end %>
 </div>
 
