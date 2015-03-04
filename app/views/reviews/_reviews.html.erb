@@ -1,5 +1,12 @@
-<div id="review-title">
-  <p>Reviews of <%= @name %></p>
+<div>
+  <p id="review-title">Reviews of <%= @doctor.name %></p>
+  <p class="num-reviews" id="doctor-<%= @doctor.id %>-review-count"><%= @doctor.reviews.count %> 
+  <% if @doctor.reviews.count == 1 %>
+    review
+  <% else %>
+    reviews
+  <% end %>
+  </p>
 </div>
 
 <div id="add-review">
@@ -19,8 +26,7 @@
 <div class="all-reviews">
 <% @reviews.order("created_at desc").each do |r| %>
   <div class="review">
-    <p class="rating-number"><%= r.rating %></p>
-    <p class="rating-title">Rating:</p>
+    <p class="rating-title">Rating:<span class="rating-number"><%= r.rating %></span></p>
     <p class="review-info"><%= r.user.username %> from <%= r.user.city %>, <%= r.user.state %>, says:</p>
     <p class="review-text"><%= r.body %></p>
     <p class="review-date">Reviewed on <%= r.date_published %></p>

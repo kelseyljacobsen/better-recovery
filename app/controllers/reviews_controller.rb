@@ -3,7 +3,7 @@ class ReviewsController < ApplicationController
   def index
     @reviews = Review.includes(:user).where(doctor_id: params[:doctor_id])
     @id = params[:doctor_id]
-    @name = Doctor.find(params[:doctor_id]).name
+    @doctor = Doctor.find(params[:doctor_id])
   end 
 
   def new

@@ -1,10 +1,9 @@
 
-$('#doctor-<%= @review.doctor.id %>-review-count').html('<%= @review.doctor.reviews.count %> reviews');
+$('#doctor-<%= @review.doctor.id %>-review-count').html('<%= @review.doctor.reviews.count %><% if @review.doctor.reviews.count == 1 %> review<% else%> reviews<% end %></p>');
 
-$('.all-reviews').append('<div class="review"><p class="rating-number"><%= @review.rating %></p><p class="rating-title">Rating:</p><p class="review-info"><%= @review.user.username %> from <%= @review.user.city %>, <%= @review.user.state %>, says:</p><p class="review-text"><%= @review.body %></p></div>');
-
+$('.all-reviews').prepend('<div class="review"><p class="rating-title">Rating:<span class="rating-number"><%= @review.rating %></span></p><p class="review-info"><%= @review.user.username %> from <%= @review.user.city %>, <%= @review.user.state %>, says:</p><p class="review-text"><%= @review.body %></p><p class="review-date">Reviewed on <%= @review.date_published %></p></div>');
 
 $('#review-<%= @review.doctor_id %>').empty();
 
-$('#add-review-link').empty().html('Thank you for your review!');
+$('#add-review-link').empty().html('Thank you for your review!').css('color', 'rgb(255, 0, 0)');
 
