@@ -8,9 +8,9 @@
   <div class="links-and-flash">
     <div class="links">
       <% if current_user %>
-        <p>Logged in as: <%= current_user.first_name + ' ' + current_user.last_name %> &nbsp;| &nbsp;<a href="/logout">Logout</a></p>
+        <p>Logged in as: <%= current_user.username %> &nbsp;| &nbsp;<a href="/logout"><%= image_tag("logout-32.png", size: '16') %>&nbsp;Logout</a></p>
         <% else %>
-        <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal">Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal">Signup</a></p>
+        <p><a href="#loginModal" data-toggle="modal" data-target="#loginModal"><%= image_tag("login-32.png", size: '16') %>&nbsp;Login</a> &nbsp;| &nbsp;<a href="#signupModal" data-toggle="modal" data-target="#signupModal"><%= image_tag("add-user-40.png", size: '20') %>&nbsp;Signup</a></p>
       <% end %>
     </div>
     <div class="flash-messages">

@@ -17,6 +17,10 @@
   font-size: 14px;
 }
 
+.links a:hover { 
+  text-decoration: none;
+}
+
 .flash-messages {
   position: absolute;
   right: 2%;
@@ -474,10 +478,12 @@ h1 {
   margin-bottom: 15px;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
+  width: 95%;
+  margin-right: 15px;
 }
 
 #review-body {
-  width: 95%;
+  width: 97%;
   height: 100px;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
@@ -527,9 +533,13 @@ h1 {
   width: 80%;
 }
 
+.review-date {
+  font-size: 12px;
+}
+
 #submit-review-button {
   float: right;
-  margin-right: 5%;
+  margin-right: 3%;
   font-family: 'Raleway', sans-serif;
   font-weight: 300;
 }

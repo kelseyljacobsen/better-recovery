@@ -2,6 +2,14 @@ var review_form = '<%=j render partial: "review_form", locals: { review: @review
 
 $('#review-<%= @doctor.id %>').html( review_form );
 
+// slides the review form down
+$('#review-<%= @doctor.id %>').hide();
+
+setTimeout(function() {
+  $('#review-<%= @doctor.id %>').slideDown(400)
+}, 100);
+
+// saves the review div so that when user presses cancel, the previous html is saved and can be reset
 var saveReviewDiv = $('#add-review-link').html();
 
 $('#add-review-link').empty().html('Complete your review below:');
@@ -9,4 +17,20 @@ $('#add-review-link').empty().html('Complete your review below:');
 function cancelForm() {
   $('#add-review-link').empty().html( saveReviewDiv );
   $('#review-<%= @review.doctor_id %>').empty();
+  
 }
+
+
+
+
+
+// function cancelForm() {
+//   $('#add-review-link').empty().html( saveReviewDiv );
+//   $('#review-<%= @review.doctor_id %>').hide();
+
+//   setTimeout(function() {
+//     $('#review-<%= @review.doctor_id %>').slideUp(400);
+//   }, 100);
+// }
+
+

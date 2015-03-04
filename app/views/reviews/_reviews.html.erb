@@ -2,25 +2,31 @@
   <p>Reviews of <%= @name %></p>
 </div>
 
-<div class="all-reviews">
-<% @reviews.each do |r| %>
-  <div class="review">
-    <p class="rating-number"><%= r.rating %></p>
-    <p class="rating-title">Rating:</p>
-    <p class="review-info"><%= r.user.username %> from <%= r.user.city %>, <%= r.user.state %>, says:</p>
-    <p class="review-text"><%= r.body %></p>
-  </div>
-<% end %>
-</div>
-
 <div id="add-review">
   <% if current_user %>
     <div id="add-review-link">
-      <%= link_to "Add Review", new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true %>
+      <%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: 'btn btn-primary' do %>
+        <%= image_tag("plus-2-32.png", size: "14") %>
+        <span>&nbsp;Add Review</span>
+      <% end %>
     </div>
       <div id="review-<%= @id %>"></div> 
   <% else %>
     <p>Signup to create an account and review this doctor.</p>
   <% end %>
 </div>
+
+<div class="all-reviews">
+<% @reviews.order("created_at desc").each do |r| %>
+  <div class="review">
+    <p class="rating-number"><%= r.rating %></p>
+    <p class="rating-title">Rating:</p>
+    <p class="review-info"><%= r.user.username %> from <%= r.user.city %>, <%= r.user.state %>, says:</p>
+    <p class="review-text"><%= r.body %></p>
+    <p class="review-date">Reviewed on <%= r.date_published %></p>
+  </div>
+<% end %>
+</div>
+
+
 
