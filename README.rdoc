@@ -14,7 +14,7 @@ Ruby Version
 
 System dependencies
 * Rails '4.2.0'
-* PostgreSQL 9.4.0
+* PostgreSQL '9.4.0'
 
 Languages Used
 * Ruby on Rails
