@@ -1,5 +1,7 @@
 
 <%= form_for review, remote: true, id: "review-form" do |f| %>
+  <p>Note that some surgeons have more than one specialty. To protect the integrity of the app, please make sure you are reviewing the surgeon for the following specialty: </p>
+  <p id="specialty"><%= @doctor.specialty %></p>
   <div class="form-group">
     <label for="rating">Rating</label>
     <%= f.select :rating, (1..5), {}, { required: true, class: 'form-control', id: 'rating-dropdown' } %>

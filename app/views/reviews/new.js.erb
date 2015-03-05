@@ -12,7 +12,7 @@ setTimeout(function() {
 // saves the review div so that when user presses cancel, the previous html is saved and can be reset
 var saveReviewDiv = $('#add-review-link').html();
 
-$('#add-review-link').empty().html('Complete your review below:');
+$('#add-review-link').empty().html('Complete your review below:<br><br>');
 
 function cancelForm() {
   $('#add-review-link').empty().html( saveReviewDiv );

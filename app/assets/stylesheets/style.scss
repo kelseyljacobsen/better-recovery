@@ -392,7 +392,7 @@ h1 {
   font-weight: 300;
   display: block;
   background-color: white;
-  width: 92%;
+  width: 91%;
   position: relative;
 }
 
@@ -465,6 +465,10 @@ h1 {
   width: 92%;
 }
 
+#reviews {
+  margin-right: 0.5%;
+}
+
 #review-title {
   margin-left: 15px;
   margin-bottom: 15px;
@@ -509,6 +513,11 @@ h1 {
   margin-bottom: 5px;
   margin-top: 5px;
   margin-left: 3px;
+}
+
+#specialty {
+  text-align: center;
+  color: rgb(255, 0, 0);
 }
 
 .rating-number {
