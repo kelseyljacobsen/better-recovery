@@ -2,7 +2,6 @@ angular
   .module("BetterRecovery")
   .controller("indexController", ['$scope', '$resource', function($scope, $resource){
 
-  // function indexController($scope) {
     $scope.showKneeDoctors = false;
     $scope.showShoulderDoctors = false;
     $scope.showElbowDoctors = false;
@@ -11,6 +10,5 @@ angular
     $scope.showSpineDoctors = false;
     $scope.showHipDoctors = false;
     $scope.showReviews = false;
-  // }
 
   }]);

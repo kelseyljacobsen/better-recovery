@@ -1,11 +1,14 @@
-
+// WHEN REVIEW IS CREATED, IT ADDS TO THE NUMBER OF REVIEWS ON TOP OF REVIEW COLUMN
 $('#doctor-<%= @review.doctor.id %>-review-count').html('<%= @review.doctor.reviews.count %><% if @review.doctor.reviews.count == 1 %> review<% else%> reviews<% end %></p>');
 
+// ADDS THE NEW REVIEW TO THE TOP OF THE ALL-REVIEWS COLUMN ON SUBMIT
 $('.all-reviews').prepend('<div class="review"><p class="rating-title">Rating:<span class="rating-number"><%= @review.rating %></span></p><p class="review-info"><%= @review.user.username %> from <%= @review.user.city %>, <%= @review.user.state %>, says:</p><p class="review-text"><%= @review.body %></p><p class="review-date">Reviewed on <%= @review.date_published %></p></div>');
 
+// SLIDES UP THE REVIEW FORM WHEN THE REVIEW IS SUBMITTED
 $('#review-<%= @review.doctor_id %>').slideUp(400, function() {
   $(this).empty();
 });
 
+// REMOVES THE REVIEW FORM TITLE AND CHANGES THE HTML AND CSS
 $('#add-review-link').empty().html('Thank you for your review!').css('color', 'rgb(49, 101, 171)');
 

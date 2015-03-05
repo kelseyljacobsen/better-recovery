@@ -1,35 +1,29 @@
 class SessionsController < ApplicationController
 
-  # creates a new session
+  # CREATES A NEW SESSION
   def new
   end 
 
   def create
     user = User.find_by(email: params[:user][:email]) 
 
-    # user exists and password matches that user's password 
+    # USER EXISTS AND PASSWORD MATCHES THAT USER'S PASSWORD
     if user && user.authenticate(params[:user][:password]) 
-      # resets the session for added security
+      # RESETS THE SESSION FOR ADDED SECURITY
       reset_session
-      # welcomes the user back by referring to their first name
       flash[:success] = "Welcome back, #{user.first_name}!"
-      # guarantees that the session[:user_id] will always be a string of the user's id
       session[:user_id] = user.id.to_s 
       redirect_to root_path
     else
-      # alerts that the user has entered an incorrect password and/or username
       flash[:danger] = "Incorrect password and/or username."
-      # redirects user to homepage to sign in again
       redirect_to root_path
     end 
   end 
 
-  # user logs out and session is destroyed
+  # USER LOGS OUT AND SESSION IS DESTROYED
   def destroy
     session[:user_id] = nil
-    # alerts the user that the signout has been successful
     flash[:success] = "You have successfully logged out!"
-    # redirects user to homepage
     redirect_to root_path
   end 
 

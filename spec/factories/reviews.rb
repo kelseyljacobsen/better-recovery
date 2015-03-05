@@ -1,8 +1,9 @@
 FactoryGirl.define do
   factory :review do
     user nil
-book nil
-body "MyText"
+    doctor nil
+    rating "5"
+    body "MyText"
   end
 
 end

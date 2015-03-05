@@ -1,9 +1,11 @@
 class UsersController < ApplicationController
 
+# SETS UP A NEW USER
   def new
     @user = User.new
   end
 
+# CREATES A NEW USER
   def create
     @user = User.new(user_params)
     if @user.save

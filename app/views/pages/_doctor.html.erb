@@ -1,3 +1,4 @@
+<!-- POPULATES BUSINESS CARD DOCTOR 'BUTTONS' -->
 <%= button_to doctor_reviews_path(doctor_id: doctor.id), class: "surgeon", method: :get, 'ng-click': 'showReviews=true', remote: true do %>
   <p class="surgeon-name"><%= doctor.name %></p>
   <% if doctor.group %>
@@ -7,6 +8,8 @@
     <%= doctor.city %> <%= doctor.zip %><br>
     <%= doctor.phone %><br>
     <%= link_to doctor.web, "http://#{doctor.web}", target: "_blank" %></p>
+    
+<!--     AVERAGES AND ROUNDS THE REVIEWS FOR AN AVERAGE RATING -->
   <% if doctor.reviews.average(:rating).to_f > 0 %>
     <div class="rating-average">
       <%= doctor.reviews.average(:rating).to_f.round(1) %>

@@ -1,6 +1,10 @@
+<!-- INDEX OF REVIEWS FOR EACH DOCTOR -->
 <div>
   <p id="review-title">Reviews of <%= @doctor.name %></p>
+
+<!-- COUNTS THE NUMBER OF REVIEWS -->
   <p class="num-reviews" id="doctor-<%= @doctor.id %>-review-count"><%= @doctor.reviews.count %> 
+<!-- GRAMMAR CHECK -->
   <% if @doctor.reviews.count == 1 %>
     review
   <% else %>
@@ -10,6 +14,7 @@
 </div>
 
 <div id="add-review">
+<!-- ONLY USERS CAN POST REVIEWS -->
   <% if current_user %>
     <div id="add-review-link">
       <%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: 'btn btn-primary' do %>
@@ -23,6 +28,7 @@
   <% end %>
 </div>
 
+<!-- ALL REVIEWS BELOW, MOST RECENT ON TOP -->
 <div class="all-reviews">
 <% @reviews.order("created_at desc").each do |r| %>
   <div class="review">

@@ -1,19 +1,22 @@
 var review_form = '<%=j render partial: "review_form", locals: { review: @review } %>';
 
+// RENDERS THE REVIEW FORM THROUGH JS
 $('#review-<%= @doctor.id %>').html( review_form );
 
-// slides the review form down
+// SLIDES THE REVIEW FORM DOWN
 $('#review-<%= @doctor.id %>').hide();
 
 setTimeout(function() {
   $('#review-<%= @doctor.id %>').slideDown(400)
 }, 100);
 
-// saves the review div so that when user presses cancel, the previous html is saved and can be reset
+// SAVES THE REVIEW DIV IN A VARIABLE SO THAT WHEN USER PRESSES CANCEL, THE PREVIOUS HTML IS SAVED AND CAN BE RESET
 var saveReviewDiv = $('#add-review-link').html();
 
+// REMOVES THE ADD REVIEW LINK AND ADDS THE REVIEW TITLE
 $('#add-review-link').empty().html('Complete your review below:<br><br>');
 
+//SLIDES THE FORM UP IF THE USER CANCELS THE REVIEW
 function cancelForm() {
   $('#add-review-link').empty().html( saveReviewDiv );
   $('#review-<%= @review.doctor_id %>').slideUp(400, function(){

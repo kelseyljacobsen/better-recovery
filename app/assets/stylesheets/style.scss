@@ -1,4 +1,4 @@
-
+// HEADER AND LINKS
 
 .header {
   text-align: center;
@@ -21,6 +21,8 @@
   text-decoration: none;
 }
 
+// FLASH MESSAGES
+
 .flash-messages {
   position: absolute;
   right: 2%;
@@ -32,6 +34,8 @@
   font-weight: 300;
   font-size: 16px;
 }
+
+// MODAL STYLES
 
 label {
   font-family: 'Raleway', sans-serif;
@@ -87,6 +91,8 @@ h1 {
   font-weight: 300;
   font-size: 20px;
 }
+
+// BODY COLUMN STYLES
 
 #body-part {
   text-align: center;
@@ -310,45 +316,7 @@ h1 {
   left: 70.3%;
 }
 
-.surgeons {
-  @include span-columns(3.5);
-  border: none;
-  height: 100vh;
-  z-index: 2;
-  margin-left: 2%;
-  margin-bottom: 2%;
-  position: relative;
-}
-
-.surgeon-list {
-  height: 103vh;
-  overflow-y: scroll;
-  width: 100%;
-}
-
-
-//JIM'S STUFF
-
-// .surgeon-list.ng-hide {
-//   width: 0;
-// }
-
-// .surgeon-list.ng-hide-add {
-
-// }
-
-// .surgeon-list.ng-hide-remove {
-//   transition: 0s ease all;
-// }
-
-// .surgeon-list.ng-hide-add-active,
-// .surgeon-list.ng-hide-remove-active {
-//   transition: 0.5s ease all;
-// }
-
-// END JIM'S STUFF
-
-
+// ANIMATIONS ON SURGEON COLUMN AND REVIEW COLUMN
 
 .animate-hide {
  -webkit-transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) .5s;
@@ -383,6 +351,23 @@ h1 {
   right: -100%;
 }
 
+// SURGEON COLUMN STYLES
+
+.surgeons {
+  @include span-columns(3.5);
+  border: none;
+  height: 100vh;
+  z-index: 2;
+  margin-left: 2%;
+  margin-bottom: 2%;
+  position: relative;
+}
+
+.surgeon-list {
+  height: 103vh;
+  overflow-y: scroll;
+  width: 100%;
+}
 
 .surgeon {
   padding: 10px 10px 0px 10px;
@@ -437,6 +422,8 @@ h1 {
   position: relative;
   z-index: 2;
 }
+
+// REVIEW COLUMN STYLES
 
 .reviews {
   @include span-columns(3.5);

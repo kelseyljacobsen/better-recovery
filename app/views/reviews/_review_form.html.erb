@@ -1,17 +1,24 @@
-
+<!-- FORM FOR DOCTOR REVIEW -->
 <%= form_for review, remote: true, id: "review-form" do |f| %>
+
   <p>Note that some surgeons have more than one specialty. To protect the integrity of the app, please make sure you are reviewing the surgeon for the following specialty: </p>
+
   <p id="specialty"><%= @doctor.specialty %></p>
+
   <div class="form-group">
     <label for="rating">Rating</label>
     <%= f.select :rating, (1..5), {}, { required: true, class: 'form-control', id: 'rating-dropdown' } %>
     <label for="body">Comment</label>
     <%= f.text_area :body, id: "review-body", class: "form-control", required: true %>
   </div>
+<!--   HIDDEN FIELDS -->
   <%= f.hidden_field :doctor_id, hidden: true %>
   <%= f.hidden_field :user_id, hidden: true %>
+
+<!--   ONCLICK CALLS CANCELFORM FUNCTION FROM REVIEWS/NEW.JS -->
   <a onclick='cancelForm()' id="cancel-tag">
     Cancel
   </a>
   <%= f.submit "Submit", class: "btn btn-primary", id: 'submit-review-button' %>
+
 <% end %>

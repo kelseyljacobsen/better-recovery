@@ -1,3 +1,4 @@
+<!-- HEADER -->
 <div ng-controller="indexController">
   <div class="header">
     <h1>ORTHO-LA</h1>
@@ -5,6 +6,7 @@
     <hr>
   </div>
 
+<!-- FLASH MESSAGES AND LINKS -->
   <div class="links-and-flash">
     <div class="links">
       <% if current_user %>
@@ -28,8 +30,10 @@
     </div>
   </div>
 
-
 <div class="outer-container">
+
+<!-- SURGEONS COLUMN -->
+<!-- RENDERS DOCTOR PARTIAL AND CALLS ONLY THE DOCTORS IN THE COLLECTION THAT HAVE THE INDICATED SPECIALTY -->
   <div class="surgeons">
     <div class="surgeon-list animate-hide" ng-show="showKneeDoctors">
       <%= render partial: "doctor", collection: @doctors.where(specialty: 'knee') %>  
@@ -54,12 +58,16 @@
     </div>
   </div>
 
+<!-- BODY COLUMN -->
 
+<!-- DISPLAYS CLICKED BODY PART ON THE TOP OF THE SCREEN, UNDERNEATH THE HEADER -->
   <div class="body-parts">
     <div class="selected-body-part">
       <h3 id="body-part"></h3>
     </div>
 
+<!-- 
+ALL THE RED CIRCLES, CONNECTED TO NG-CLICKS THAT SHOW AND HIDE THE DIVS THAT DISPLAY THE DOCTORS BASED ON THEIR SPECIALTIES. THEY ARE ALSO CONNECTED TO INDEX.JS FILE THAT GIVES THE DIVS COLOR WHEN THEY ARE CLICKED -->
     <div id="body">
       <%= image_tag('man-front-back.png') %>
       <div id="knee" class="body-style" ng-click="showKneeDoctors=true; showHipDoctors=false; showElbowDoctors=false; showFootDoctors=false; showHandDoctors=false; showSpineDoctors=false; showShoulderDoctors=false"></div>
@@ -101,6 +109,7 @@
 
   </div>
 
+<!-- REVIEWS COLUMN -->
   <div class="reviews animate-hide-right" ng-show="showReviews">
     <div class="review-list">
       <div id="reviews">
@@ -108,11 +117,10 @@
     </div>
   </div>
 
-
+<!-- FOOTER RENDERED THROUGH PARTIAL -->
 <%= render 'footer' %>
 
 <!-- LOGIN MODAL BEGINS HERE (part of header) -->
-
   <div class="modal fade" id="loginModal">
     <div class="modal-dialog">
        <div class="modal-content">

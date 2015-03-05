@@ -1,3 +1,5 @@
+// RED CIRCLE DIVS FOR BODY. ALSO CHANGES HTML 'BODY PART' DISPLAY ON PAGE
+
 $(document).ready(function() {
 
  $('#body-part').html('Click on a body part to view the surgeons');
@@ -56,7 +58,8 @@ $(document).ready(function() {
     $('#body-part').html('Hip');
   });
 
-  $('div.fade-flash-messages').fadeOut(5000).removeClass('fade-flash-messages');
+// FADES FLASH MESSAGES AFTER 4 SECONDS
+  $('div.fade-flash-messages').fadeOut(4000).removeClass('fade-flash-messages');
 
 });
 
