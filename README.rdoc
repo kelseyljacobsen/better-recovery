@@ -1,28 +1,23 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ACL surgery requires a surgeon who specializes in knee surgery, just as hip replacement surgery requires a surgeon who specializes in hip surgery. 
 
-Things you may want to cover:
+A directory of the very best orthopedic surgeons in Los Angeles, ORTHO-LA does what Yelp, HealthGrades, Vitals, and other directories do not: it categorizes the surgeons by their specialties. Rather than scour the internet and various review sites, ORTHO-LA users can easily find and rate/review surgeons who perform a patient's necessary surgery--and perform it well. 
 
-* Ruby version
+The doctors listed in ORTHO-LA's directory are the highest rated and most awarded surgeons across multiple review sites. 10-12 surgeons were selected from each specialty.
 
-* System dependencies
+Deployed Application
+* ortho-la.herokuapp.com
 
-* Configuration
+Ruby Version
+* Ruby '2.1.2'
 
-* Database creation
+System dependencies
+* Rails '4.2.0'
+* PostgreSQL 9.4.0
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Languages Used
+* Ruby on Rails
+* Javascript
+* JQuery
+* AngularJS
