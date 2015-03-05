@@ -16,7 +16,9 @@ $('#add-review-link').empty().html('Complete your review below:');
 
 function cancelForm() {
   $('#add-review-link').empty().html( saveReviewDiv );
-  $('#review-<%= @review.doctor_id %>').empty();
+  $('#review-<%= @review.doctor_id %>').slideUp(400, function(){
+    $(this).empty();
+  });
   
 }
 
@@ -24,13 +26,5 @@ function cancelForm() {
 
 
 
-// function cancelForm() {
-//   $('#add-review-link').empty().html( saveReviewDiv );
-//   $('#review-<%= @review.doctor_id %>').hide();
-
-//   setTimeout(function() {
-//     $('#review-<%= @review.doctor_id %>').slideUp(400);
-//   }, 100);
-// }
 
 

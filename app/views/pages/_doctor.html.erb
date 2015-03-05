@@ -3,9 +3,14 @@
   <% if doctor.group %>
     <p class="surgeon-group"><%= doctor.group %></p>
   <% end %>
-  <p class="surgeon-info"><%= doctor.address %><br>
+    <p class="surgeon-info"><%= doctor.address %><br>
     <%= doctor.city %> <%= doctor.zip %><br>
     <%= doctor.phone %><br>
     <%= link_to doctor.web, "http://#{doctor.web}", target: "_blank" %></p>
+  <% if doctor.reviews.average(:rating).to_f > 0 %>
+    <div class="rating-average">
+      <%= doctor.reviews.average(:rating).to_f.round(1) %>
+    </div>
   <% end %>
+<% end %>
 
