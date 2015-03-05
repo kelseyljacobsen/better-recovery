@@ -105,7 +105,7 @@ namespace :import do
         city: 'Commerce, CA',
         zip: '90040',
         phone: '323-980-9002',
-        web: 'https://www.rmsmedicalgroup.com'
+        web: 'www.rmsmedicalgroup.com'
       },
 
       # KNEE DOCTORS
@@ -329,7 +329,7 @@ namespace :import do
         city: 'Commerce, CA',
         zip: '90040',
         phone: '323-980-9002',
-        web: 'https://www.rmsmedicalgroup.com'
+        web: 'www.rmsmedicalgroup.com'
       },
 
       # HIP DOCTORS

@@ -11,9 +11,13 @@
     
 <!--     AVERAGES AND ROUNDS THE REVIEWS FOR AN AVERAGE RATING -->
   <div class="rating-average">
+  <div id="rating-average-div-<%= doctor.id %>">
     <% if doctor.reviews.average(:rating).to_f > 0 %>
+
       <%= doctor.reviews.average(:rating).to_f.round(1) %>
+
     <% end %>
-     </div>
+  </div>
+  </div>
 <% end %>
 
