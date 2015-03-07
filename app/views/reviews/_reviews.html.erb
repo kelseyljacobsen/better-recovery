@@ -13,29 +13,51 @@
   </p>
 </div>
 
+
 <div id="add-review">
 <!-- ONLY USERS CAN POST REVIEWS -->
   <% if current_user %>
-    <div id="add-review-link">
-      <%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: 'btn btn-primary' do %>
-        <%= image_tag("plus-2-32.png", size: "14") %>
-        <span>&nbsp;Add Review</span>
-      <% end %>
+
+    <% if current_user.reviews.find_by(doctor_id: @id) %>
+      <div id="edit-review-link">
+      <%= link_to edit_user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), remote: true, class: 'btn btn-primary' do %>
+        <%= image_tag("edit-32.png", size: "14") %>
+          <span>&nbsp;Edit Review</span>
+        <% end %>
+      </div>
+
+    <% else %>
+      <div id="add-review-link">
+        <%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: 'btn btn-primary' do %>
+          <%= image_tag("plus-2-32.png", size: "14") %>
+          <span>&nbsp;Add Review</span>
+        <% end %>
     </div>
-      <div id="review-<%= @id %>"></div> 
+    <% end %>
+
+    <div id="review-<%= @id %>"></div> 
+
   <% else %>
-    <p>Signup to create an account and review this doctor.</p>
+    <p>Signup or login to review this doctor.</p>
   <% end %>
+
 </div>
 
 <!-- ALL REVIEWS BELOW, MOST RECENT ON TOP -->
 <div class="all-reviews">
 <% @reviews.order("created_at desc").each do |r| %>
-  <div class="review">
+  <div class="review review-<%= r.id %>">
     <p class="rating-title">Rating:<span class="rating-number"><%= r.rating %></span></p>
     <p class="review-info"><%= r.user.username %> from <%= r.user.city %>, <%= r.user.state %>, says:</p>
     <p class="review-text"><%= r.body %></p>
     <p class="review-date">Reviewed on <%= r.date_published %></p>
+    <% if current_user %>
+      <% if current_user.reviews.find_by(doctor_id: @id) %>
+      <%= link_to user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), method: :delete, remote: true, class: "review-delete-button" do %>
+        <%= image_tag("trash-9-32.png", size: "14") %>
+        <% end %>
+      <% end %>
+    <% end %>
   </div>
 <% end %>
 </div>

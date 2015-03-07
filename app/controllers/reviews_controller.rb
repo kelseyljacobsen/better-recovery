@@ -14,6 +14,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = Review.new(review_params)
+    @id = @review.doctor_id
 
     if @review.save
       @message = "Review saved."
@@ -21,6 +22,27 @@ class ReviewsController < ApplicationController
       @message = @review.errors.full_messages.to_sentence
     end
   end
+
+  def edit
+    @review = Review.find(params[:id])
+    @doctor = Doctor.find(params[:doctor_id])
+  end 
+
+  def update
+    @review = Review.find(params[:id])
+    if @review.update_attributes(review_params)
+      @message = "Review updated."
+    else
+      @message = @review.errors.full_messages.to_sentence
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @id = @review.doctor_id
+    @review.destroy
+      @message = "Review deleted."
+  end 
 
 private
 
