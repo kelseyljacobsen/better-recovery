@@ -454,6 +454,13 @@ h1 {
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
   width: 92%;
+  position: relative;
+}
+
+.review-delete-button {
+  position: absolute;
+  right: 3%;
+  bottom: 13%;
 }
 
 #reviews {
@@ -521,12 +528,12 @@ h1 {
 
 .rating-number {
   float: right;
-  font-size: 34px;
+  font-size: 30px;
   font-family: 'Syncopate', sans-serif;
   font-weight: 400;
   position: absolute;
   right: 7%;
-  padding-top: 18px;
+  padding-top: 14px;
 }
 
 .rating-title {

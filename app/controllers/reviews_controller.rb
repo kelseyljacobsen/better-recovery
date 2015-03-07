@@ -10,6 +10,7 @@ class ReviewsController < ApplicationController
     @user = User.find(params[:user_id])
     @doctor = Doctor.find(params[:doctor_id])
     @review = Review.new(user_id: @user.id, doctor_id: @doctor.id)
+    @id = @review.doctor_id
   end
 
   def create
@@ -26,10 +27,12 @@ class ReviewsController < ApplicationController
   def edit
     @review = Review.find(params[:id])
     @doctor = Doctor.find(params[:doctor_id])
+    @id = @review.doctor_id
   end 
 
   def update
     @review = Review.find(params[:id])
+    @id = @review.doctor_id
     if @review.update_attributes(review_params)
       @message = "Review updated."
     else

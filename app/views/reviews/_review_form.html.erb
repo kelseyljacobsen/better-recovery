@@ -11,6 +11,9 @@
     <label for="body">Comment</label>
     <%= f.text_area :body, id: "review-body", class: "form-control", required: true %>
   </div>
+
+
+
 <!--   HIDDEN FIELDS -->
   <%= f.hidden_field :doctor_id, hidden: true %>
   <%= f.hidden_field :user_id, hidden: true %>

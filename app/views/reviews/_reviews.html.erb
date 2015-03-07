@@ -22,7 +22,7 @@
       <div id="edit-review-link">
       <%= link_to edit_user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), remote: true, class: 'btn btn-primary' do %>
         <%= image_tag("edit-32.png", size: "14") %>
-          <span>&nbsp;Edit Review</span>
+          <span>&nbsp;&nbsp;Edit Review</span>
         <% end %>
       </div>
 
@@ -30,7 +30,7 @@
       <div id="add-review-link">
         <%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: 'btn btn-primary' do %>
           <%= image_tag("plus-2-32.png", size: "14") %>
-          <span>&nbsp;Add Review</span>
+          <span>&nbsp;&nbsp;Add Review</span>
         <% end %>
     </div>
     <% end %>
@@ -54,7 +54,7 @@
     <% if current_user %>
       <% if current_user.reviews.find_by(doctor_id: @id) %>
       <%= link_to user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), method: :delete, remote: true, class: "review-delete-button" do %>
-        <%= image_tag("trash-9-32.png", size: "14") %>
+        <%= image_tag("trash-9-32.png", size: "18") %>
         <% end %>
       <% end %>
     <% end %>
