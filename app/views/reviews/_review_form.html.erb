@@ -1,6 +1,7 @@
 <!-- FORM FOR DOCTOR REVIEW -->
 <%= form_for review, remote: true, id: "review-form" do |f| %>
 
+<div class="review-form-div">
   <p>Note that some surgeons have more than one specialty. To protect the integrity of the app, please make sure you are reviewing the surgeon for the following specialty: </p>
 
   <p id="specialty"><%= @doctor.specialty %></p>
@@ -12,7 +13,13 @@
     <%= f.text_area :body, id: "review-body", class: "form-control", required: true %>
   </div>
 
-
+  <!-- <a onclick='deleteReview()'> -->
+    <% if current_user.reviews.find_by(doctor_id: @id) %>
+      <%= link_to user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), method: :delete, remote: true, class: "review-delete-button" do %>
+          <%= image_tag("trash-9-32.png", size: "22") %>
+          <% end %>
+    <% end %>
+<!--   </a> -->
 
 <!--   HIDDEN FIELDS -->
   <%= f.hidden_field :doctor_id, hidden: true %>
@@ -24,4 +31,6 @@
   </a>
   <%= f.submit "Submit", class: "btn btn-primary", id: 'submit-review-button' %>
 
+</div>
 <% end %>
+

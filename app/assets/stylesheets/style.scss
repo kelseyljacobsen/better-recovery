@@ -457,10 +457,13 @@ h1 {
   position: relative;
 }
 
+.review-form-div {
+  position: relative;
+}
+
 .review-delete-button {
   position: absolute;
-  right: 3%;
-  bottom: 13%;
+  left: 1%;
 }
 
 #reviews {
@@ -505,7 +508,15 @@ h1 {
   margin-bottom: 10px;
 }
 
-#add-review-link {
+// #add-review-link {
+//   text-align: center;
+//   width: 95%;
+//   margin-bottom: 5px;
+//   margin-top: 5px;
+//   margin-left: 3px;
+// }
+
+#review-buttons {
   text-align: center;
   width: 95%;
   margin-bottom: 5px;
@@ -513,13 +524,13 @@ h1 {
   margin-left: 3px;
 }
 
-#edit-review-link {
-  text-align: center;
-  width: 95%;
-  margin-bottom: 5px;
-  margin-top: 5px;
-  margin-left: 3px;
-}
+// #edit-review-link {
+//   text-align: center;
+//   width: 95%;
+//   margin-bottom: 5px;
+//   margin-top: 5px;
+//   margin-left: 3px;
+// }
 
 #specialty {
   text-align: center;
