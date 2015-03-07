@@ -11,14 +11,14 @@ setTimeout(function() {
 }, 100);
 
 // SAVES THE REVIEW DIV IN A VARIABLE SO THAT WHEN USER PRESSES CANCEL, THE PREVIOUS HTML IS SAVED AND CAN BE RESET
-var saveReviewDiv = $('#edit-review-link').html();
+var saveReviewDiv = $('#review-buttons').html();
 
 // REMOVES THE ADD REVIEW LINK AND ADDS THE REVIEW TITLE
 $('#review-buttons').empty().html('Edit your review below:<br><br>');
 
 //SLIDES THE FORM UP IF THE USER CANCELS THE REVIEW
 function cancelForm() {
-  $('#edit-review-link').empty().html( saveReviewDiv );
+  $('#review-buttons').empty().html( saveReviewDiv );
   $('#review-<%= @review.doctor_id %>').slideUp(400, function(){
     $(this).empty();
   });
