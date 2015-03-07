@@ -8,9 +8,10 @@ $('#review-<%= @review.doctor_id %>').slideUp(400, function() {
 });
 
 // REMOVES THE REVIEW FORM TITLE AND CHANGES THE HTML AND CSS
-$('#edit-review-link').empty().html('Thank you for your updated review!<br><br>').css('color', 'rgb(49, 101, 171)').delay(1000).fadeOut(800);
 
-$('#review-buttons').append('<%= link_to edit_user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), remote: true, class: "btn btn-primary" do %><%= image_tag("edit-32.png", size: "14") %><span>&nbsp;&nbsp;Edit Review</span><% end %>');
+$('#edit-review-text').empty().html('Thank you for your updated review!<br><br>').css('color', 'rgb(49, 101, 171)').delay(1000).fadeOut(800);
+
+$('#review-buttons').append('<div id="edit-review-link"></div><%= link_to edit_user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), remote: true, class: "btn btn-primary" do %><%= image_tag("edit-32.png", size: "14") %><span>&nbsp;&nbsp;Edit Review</span><% end %>');
 
 
 // CHANGES THE AVERAGE REVIEW HTML WHEN THE REVIEW IS SUBMITTED

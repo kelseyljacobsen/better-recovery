@@ -14,7 +14,7 @@ setTimeout(function() {
 var saveReviewDiv = $('#review-buttons').html();
 
 // REMOVES THE ADD REVIEW LINK AND ADDS THE REVIEW TITLE
-$('#review-buttons').empty().html('Complete your review below:<br><br>').css('color', 'black');
+$('#review-buttons').empty().html('<div id="add-review-text">Complete your review below:<br><br></div>').css('color', 'black');
 
 //SLIDES THE FORM UP IF THE USER CANCELS THE REVIEW
 function cancelForm() {

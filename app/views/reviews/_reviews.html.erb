@@ -19,6 +19,8 @@
   <% if current_user %>
     <div id="review-buttons">
       <% if current_user.reviews.find_by(doctor_id: @id) %>
+        <div id="edit-review-text">
+        </div>
         <div id="edit-review-link">
         <%= link_to edit_user_doctor_review_path(user_id: current_user.id, doctor_id: @id, id: current_user.reviews.find_by(doctor_id: @id).id), remote: true, class: 'btn btn-primary' do %>
           <%= image_tag("edit-32.png", size: "14") %>
@@ -27,12 +29,14 @@
         </div>
 
       <% else %>
+        <div id="add-review-text">
+        </div>
         <div id="add-review-link">
           <%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: 'btn btn-primary' do %>
             <%= image_tag("plus-2-32.png", size: "14") %>
             <span>&nbsp;&nbsp;Add Review</span>
           <% end %>
-      </div>
+        </div>
       <% end %>
     </div>
 

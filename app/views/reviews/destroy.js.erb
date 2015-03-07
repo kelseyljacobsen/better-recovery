@@ -10,7 +10,10 @@ setTimeout(function() {
 }, 100);
 
 // REMOVES THE REVIEW FORM TITLE AND CHANGES THE HTML AND CSS
-$('#review-buttons').empty().html('<div id="add-review-link"><%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: "btn btn-primary" do %><%= image_tag("plus-2-32.png", size: "18") %><span>&nbsp;&nbsp;Add Review</span><% end %></div>');
+
+$('#edit-review-text').empty().html('Review deleted.<br><br>').css('color', 'rgb(49, 101, 171)').delay(1000).fadeOut(800);
+
+$('#review-buttons').append('<div id="add-review-text"></div><div id="add-review-link"><%= link_to new_user_doctor_review_path(user_id: current_user.id, doctor_id: @id), remote: true, class: "btn btn-primary" do %><%= image_tag("plus-2-32.png", size: "18") %><span>&nbsp;&nbsp;Add Review</span><% end %></div>');
 
 // CHANGES THE AVERAGE REVIEW HTML WHEN THE REVIEW IS SUBMITTED
 $('#rating-average-div-<%= @review.doctor.id %>').empty().html('<% if @review.doctor.reviews.average(:rating).to_f > 0 %><div class="rating-average"><%= @review.doctor.reviews.average(:rating).to_f.round(1) %></div><% end %>');
