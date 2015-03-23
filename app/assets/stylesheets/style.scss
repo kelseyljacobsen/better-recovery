@@ -363,7 +363,7 @@ h1 {
   height: 100vh;
   z-index: 2;
   margin-left: 2%;
-  margin-bottom: 2%;
+  margin-bottom: 8%;
   position: relative;
 }
 
@@ -437,7 +437,7 @@ h1 {
   z-index: 3;
   margin-right: 2%;
   margin-left: -4%;
-  margin-bottom: 2%;
+  margin-bottom: 8%;
 }
 
 .review-list {
@@ -613,7 +613,7 @@ footer {
     bottom: 0;
     height: 100px;
     width: 100%;
-    padding-top: 35px;
+    padding-top: 10px;
     z-index: 5;
     font-family: 'Roboto', sans-serif;
     text-transform: uppercase;
@@ -622,6 +622,7 @@ footer {
     padding-left: 2%;
     padding-bottom: 2%;
     z-index: 4;
+    background-color: white;
 }
 
 #footer-info {
